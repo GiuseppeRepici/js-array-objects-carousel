@@ -6,30 +6,36 @@ body{
     text-align: center;
     margin: 5vh 0 0 0;
 }
-.image{
-    display: none;
+
+
+.containerimage{
+    position: relative;
     width: 70%;
 }
 
-.test{
-    display: none;
-    color: white;
-    text-align: right;
+.scheda{
     position: absolute;
-    width: 540px;
-    bottom: 0;
-    left: calc(60% - 545px) ;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+#img1{
+    display: block;
+    width: 100%;
+}
+
+#img2{
+    display: block;
+    width: 100%; 
 }
 
 #container {
     position: relative;
 }
-#imgcontainer{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    
-}
+
 
 .btnavanti{
     position: absolute;
@@ -79,7 +85,6 @@ body{
     height: calc(100% / 5);
     object-fit: cover;
     opacity: .1;
-    
 }
 
 .opac{

@@ -25,23 +25,21 @@ const images = [
 let x=0;
 
 const image1 = document.getElementById("imgcontainer");
-const stampaText = document.querySelector(".textcontainer");
 const imagelaterali = document.getElementById("containerlaterale");
 const btnGiu = document.getElementById("btn2");
 const btnSu = document.getElementById("btn1");
 
-images.forEach(function (el) {
-    image1.innerHTML += `<img src="${el.image}" class="image" id="imgs" >`;
-    imagelaterali.innerHTML += `<img src="${el.image}" class="imagelaterali" id="imgslaterali" >`;
-    stampaText.innerHTML += `<div class="test"> <h1 >${el.title} </h1> <p>${el.text}</p> </div>`
+images.forEach(function (el,i) {
+     image1.innerHTML+= `<div class="scheda scheda${i}"> <h1 class="titolo"><strong>${el.title}</strong></h1> <br> <p> ${el.text} </p> <br><img id="img1" src="${el.image}">  <br> </div>`;
+     imagelaterali.innerHTML += `<img id="img2" src="${images[i].image}" class="imagelaterali" id="imgslaterali" >`;
 })
 
+
 const oldImg = document.querySelector(`.containerimage :nth-child(${(x + 1)})`);
-const oldStampaText = document.querySelector(`.textcontainer :nth-child(${(x + 1)})`);
 oldImg.classList.add( "active" );
-oldStampaText.classList.add( "active" );
 const oldImgLaterale = document.querySelector(`.container-laterale :nth-child(${(x + 1)})`);
 oldImgLaterale.classList.add( "opac" );
+
 
 btnGiu.addEventListener("click" , 
 function (){
@@ -49,43 +47,37 @@ function (){
     // x è il valore vecchio
     // es. vale x = 0
     // è l'indice dlel'immagine che devi cancellare
-    const oldImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
+    const oldImg = document.querySelector(`.scheda${x}`);
     oldImg.classList.remove( "active" );
-    const oldStampaText = document.querySelector(`.textcontainer :nth-child(${(x + 1)})`);
-    oldStampaText.classList.remove( "active" );
     const oldImgLaterale = document.querySelector(`.container-laterale :nth-child(${(x + 1)})`);
-    oldImgLaterale.classList.remove( "opac" );
-
+    oldImgLaterale.classList.add( "opac" );
     // x = 1
     x++;
+    
     if(x> (images.length - 1) ){
         x = 0;
-    } else{
-        const newImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
-        newImg.classList.add( "active" );
-        const newStampaText = document.querySelector(`.textcontainer :nth-child(${x + 1})`);
-        newStampaText.classList.add( "active" );
-        const newImgLaterale = document.querySelector(`.container-laterale :nth-child(${(x + 1)})`);
-        newImgLaterale.classList.add( "opac" );
-    }
+    } 
+    const newImg = document.querySelector(`.scheda${x}`);
+    newImg.classList.add( "active" );
+    oldImgLaterale.classList.remove( "opac" );
+    
+   
+    
 })
 
 btnSu.addEventListener("click" , 
 function (){
-    const oldImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
+    const oldImg = document.querySelector(`.scheda${x}`);
     oldImg.classList.remove( "active" );
-    const oldStampaText = document.querySelector(`.textcontainer :nth-child(${(x + 1)})`);
-    oldStampaText.classList.remove( "active" );
     const oldImgLaterale = document.querySelector(`.container-laterale :nth-child(${(x + 1)})`);
     oldImgLaterale.classList.remove( "opac" );
+
     x--;
     if(x<0){
         x=4
     }
-    const newImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
+    const newImg = document.querySelector(`.scheda${x}`);
     newImg.classList.add( "active" );
-    const newStampaText = document.querySelector(`.textcontainer :nth-child(${x + 1})`);
-    newStampaText.classList.add( "active" );
     const newImgLaterale = document.querySelector(`.container-laterale :nth-child(${(x + 1)})`);
     newImgLaterale.classList.add( "opac" );
 })
