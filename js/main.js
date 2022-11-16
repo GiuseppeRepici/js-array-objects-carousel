@@ -63,7 +63,7 @@ function (){
     } else{
         const newImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
         newImg.classList.add( "active" );
-        const newStampaText = document.querySelector(`.textcontainer:nth-child(${x + 1})`);
+        const newStampaText = document.querySelector(`.textcontainer :nth-child(${x + 1})`);
         newStampaText.classList.add( "active" );
         const newImgLaterale = document.querySelector(`.container-laterale :nth-child(${(x + 1)})`);
         newImgLaterale.classList.add( "opac" );
