@@ -30,14 +30,15 @@ const btnGiu = document.getElementById("btn2");
 const btnSu = document.getElementById("btn1");
 
 images.forEach(function (el,i) {
-     image1.innerHTML+= `<div class="scheda scheda${i}"> <h1 class="titolo"><strong>${el.title}</strong></h1> <br> <p> ${el.text} </p> <br><img id="img1" src="${el.image}">  <br> </div>`;
-     imagelaterali.innerHTML += `<img id="img2" src="${images[i].image}" class="imagelaterali" id="imgslaterali" >`;
+     image1.innerHTML+= `<div class="scheda scheda${i}"><img id="img1" src="${el.image}">  <br>  <h1 class="titolo"><strong>${el.title}</strong></h1> <br> <p> ${el.text} </p> <br> </div>`;
+     imagelaterali.innerHTML += `<img id="img2" src="${el.image}" class="imagelaterali foto${i}" id="imgslaterali" >`;
+     console.log(imagelaterali);
 })
 
 
 const oldImg = document.querySelector(`.containerimage :nth-child(${(x + 1)})`);
 oldImg.classList.add( "active" );
-const oldImgLaterale = document.querySelector(`.container-laterale :nth-child(${(x + 1)})`);
+const oldImgLaterale = document.querySelector(`.foto${(x)}`);
 oldImgLaterale.classList.add( "opac" );
 
 
@@ -50,7 +51,8 @@ function (){
     const oldImg = document.querySelector(`.scheda${x}`);
     oldImg.classList.remove( "active" );
     const oldImgLaterale = document.querySelector(`.container-laterale :nth-child(${(x + 1)})`);
-    oldImgLaterale.classList.add( "opac" );
+    oldImgLaterale.classList.remove( "opac" );
+    
     // x = 1
     x++;
     
@@ -59,7 +61,8 @@ function (){
     } 
     const newImg = document.querySelector(`.scheda${x}`);
     newImg.classList.add( "active" );
-    oldImgLaterale.classList.remove( "opac" );
+    const newImgLaterale = document.querySelector(`.container-laterale :nth-child(${(x + 1)})`);
+    newImgLaterale.classList.add( "opac" );
     
    
     
