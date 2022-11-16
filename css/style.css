@@ -11,12 +11,23 @@ body{
     width: 70%;
 }
 
+.test{
+    display: none;
+    color: white;
+    text-align: right;
+    position: absolute;
+    width: 540px;
+    bottom: 0;
+    left: calc(60% - 545px) ;
+}
+
 #container {
     position: relative;
 }
 #imgcontainer{
     display: flex;
     justify-content: center;
+    position: relative;
     
 }
 
