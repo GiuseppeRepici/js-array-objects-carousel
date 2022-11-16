@@ -1,0 +1,82 @@
+body{
+    background-color: rgb(24, 190, 43);
+}
+.testo{
+    color: gold;
+    text-align: center;
+    margin: 5vh 0 0 0;
+}
+.image{
+    display: none;
+    width: 70%;
+}
+
+#container {
+    position: relative;
+}
+#imgcontainer{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.btnavanti{
+    position: absolute;
+    top: 2px;
+    left:calc(72.25% - 20px);
+    width: 40px;
+    font-size: 20px;
+    background-color: blue;
+    color: gold;
+    border-radius: 50%;
+    border: 0;
+    z-index: 2;
+}
+
+
+
+.btnindietro{
+    position: absolute;
+    bottom: 2px;
+    left:calc(72.25% - 20px);
+    width: 40px;
+    z-index: 2;
+    font-size: 20px;
+    background-color: blue;
+    color: gold;
+    border-radius: 50%;
+    border: 0;
+}
+
+.active{
+    display: block;
+}
+
+#containerlaterale{
+    position: absolute;
+    top:  0;
+    left: 60%;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.imagelaterali{
+    display: block;
+    height: calc(100% / 5);
+    object-fit: cover;
+    opacity: .1;
+    
+}
+
+.opac{
+    opacity: 1;
+    transition: all 0.8s;
+}
+
+.opac:hover{
+    scale: 1.5;
+}
+
